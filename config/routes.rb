@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   resources :trips
   resources :users
-  get 'sessions/new'
+  # get 'sessions/new'
+
+
+  # need to create the form that justifies this route code below
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
+  
+
+
+  # logout currently displayed in trip index.html.erb
+  post '/logout' => 'sessions#destroy'
 
   root 'welcome#home'
 

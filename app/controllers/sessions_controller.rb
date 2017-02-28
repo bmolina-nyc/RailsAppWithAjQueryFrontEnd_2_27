@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
   def new
   end
 
+
+  # This is going to be created for anybody who is already a user of the page
   def create
     @user = User.find_by(username: params[:username])
     @user = user.try(:authenticate, params[:username][:password])
