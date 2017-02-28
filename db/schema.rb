@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228032308) do
+ActiveRecord::Schema.define(version: 20170228034946) do
+
+  create_table "trips", force: :cascade do |t|
+    t.string   "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
