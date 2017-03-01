@@ -13,7 +13,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logged_in
+    if !logged_in?
+    
     flash[:error] = "Must Be Logged In!"
-    return redirect_to(controller: 'welcome', action: 'home') unless logged_in?
+    return redirect_to(controller: 'welcome', action: 'home')
+  end
   end
 end

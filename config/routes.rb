@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
 
   # need to create the form that justifies this route code below
-  # get '/login' => 'sessions#new'
-  # post '/login' => 'sessions#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
   
 
 
