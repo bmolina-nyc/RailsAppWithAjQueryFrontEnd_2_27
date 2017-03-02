@@ -9,23 +9,23 @@ homepage for logins
 
 <div class ="form container">
 
-  <div id ="signup" style="display:none">
+  <div id ="signup" style="display:block">
 
     <%= form_for :user, url: '/users' do |f| %>
       <div id= "field_1">
         <%= f.label :username %>
         <%= f.text_field :username %> 
-      </div>
+      </div><br>
 
       <div id= "field_2">
         <%= f.label :password %>
         <%= f.password_field :password %> 
-      </div>
+      </div><br>
 
       <div id= "field_3">
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation %> <br><br>
-      </div>
+      </div><br>
 
       <div id="submit">
         <%= f.submit "Sign Up" %>
@@ -34,17 +34,17 @@ homepage for logins
 
   </div>
 
-    <div id ="login" style="display:block;">
+    <div id ="login" style="display:none;">
       <%= form_for :user, url: '/login' do |f| %>
         <div id= "field_1">
           <%= f.label :username %>
           <%= f.text_field :username %> 
-        </div>
+        </div><br>
 
         <div id= "field_2">
           <%= f.label :password %>
           <%= f.password_field :password %> 
-        </div>
+        </div><br>
 
         <div id="submit">
           <%= f.submit "Login" %>
