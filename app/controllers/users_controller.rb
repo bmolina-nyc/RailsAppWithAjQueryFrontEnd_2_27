@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
-
+  def index
+  end
 
   
   def create
@@ -13,6 +14,10 @@ class UsersController < ApplicationController
       flash[:error] = "didnt work"
       redirect_to controller: 'welcome', action: 'home'
     end
+  end
+
+  def show 
+    @user = current_user
   end
 
  

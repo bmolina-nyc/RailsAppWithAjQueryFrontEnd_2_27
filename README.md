@@ -18,8 +18,7 @@ Prelim Plan -
 Create own Authentication - bcrypt gem  -- DONE
 
 Create simple validations for: 
-logged in users - DONE 
-users can view their profile pages but not another persons profile pages  
+logged in users - DONE users can view their profile pages but not another persons profile pages  
 
 A user will look at vacation sights and book a trip
 

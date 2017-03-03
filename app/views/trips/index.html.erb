@@ -2,6 +2,7 @@
 <html>
 <head>
 <%= stylesheet_link_tag "trips" %>
+<%= javascript_include_tag 'trips', 'data-turbolinks-track' => true %>
 </head>
 <body >
 
@@ -9,29 +10,30 @@
     <div id="menu">
       <h2> Trip Booker </h2>
     </div>
+  </div>
 
     <div id="wrapper">
       <ul id="portfolio">
-        <li><%= image_tag 'trip_1.jpeg' %></li>
-        <li><%= image_tag 'trip_2.jpeg' %></li>
-        <li><%= image_tag 'trip_3.jpeg' %></li>
-        <li><%= image_tag 'trip_4.jpeg' %></li>
-        <li><%= image_tag 'trip_5.jpeg' %></li>
-        <li><%= image_tag 'trip_6.jpeg' %></li>
-        <li><%= image_tag 'trip_7.jpeg' %></li>
-        <li><%= image_tag 'trip_8.jpeg' %></li>
+        <li><%= image_tag 'trip_1.jpeg', alt: "trip1" %></li>
+        <li><%= image_tag 'trip_2.jpeg', alt: "trip2"%></li>
+        <li><%= image_tag 'trip_3.jpeg', alt: "trip3" %></li>
+        <li><%= image_tag 'trip_4.jpeg', alt: "trip4" %></li>
+        <li><%= image_tag 'trip_5.jpeg', alt: "trip5" %></li>
+        <li><%= image_tag 'trip_6.jpeg', alt: "trip6" %></li>
+        <li><%= image_tag 'trip_7.jpeg', alt: "trip7" %></li>
+        <li><%= image_tag 'trip_8.jpeg', alt: "trip8" %></li>
+          <%=link_to "#{@user.username}", user_path(@user)%> 
       </ul>
     </div> <!-- portfolio -->
   </div> <!-- wrapper -->
 
   <div id="footer">
-    <h6> Logged in as: <%=@user.username %></h6>
-<%# Logout of the session %>
-    <div id="logout">
-      <a><%= link_to "Logout",{:controller=> "sessions", :action=> "destroy"}, :method => :destroy%></a>
-    </div>
+    <h5> Logged in as: 
+    <%=link_to "#{@user.username}", user_path(@user)%>  
+    <%= link_to "Logout",{:controller=> "sessions", :action=> "destroy"}, :method => :destroy%></h5>
   </div> <!-- footer -->
-</body> <!-- header -->
+
+</body> 
 
 
 </html>
