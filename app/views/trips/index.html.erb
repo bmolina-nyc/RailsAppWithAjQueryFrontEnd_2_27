@@ -6,6 +6,9 @@
 <body >
 
   <div id ="header">
+    <div id="menu">
+      <h2> Trip Booker </h2>
+    </div>
 
     <div id="wrapper">
       <ul id="portfolio">
@@ -18,18 +21,20 @@
         <li><%= image_tag 'trip_7.jpeg' %></li>
         <li><%= image_tag 'trip_8.jpeg' %></li>
       </ul>
-    </div>
-  </div>
+    </div> <!-- portfolio -->
+  </div> <!-- wrapper -->
 
-</body>
+  <div id="footer">
+    <h6> Logged in as: <%=@user.username %></h6>
+<%# Logout of the session %>
+    <div id="logout">
+      <a><%= link_to "Logout",{:controller=> "sessions", :action=> "destroy"}, :method => :destroy%></a>
+    </div>
+  </div> <!-- footer -->
+</body> <!-- header -->
 
 
 </html>
-<br><br><br><br>
-trips index.html.erb
-
-<br>
-current_user: <%=  @user.username %>
 
 
 
@@ -39,7 +44,3 @@ current_user: <%=  @user.username %>
 
 
 
-<%# Logout of the session %>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
