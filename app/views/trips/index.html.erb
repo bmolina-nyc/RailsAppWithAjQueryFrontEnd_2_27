@@ -14,18 +14,45 @@
 
     <div id="wrapper">
       <ul id="portfolio">
-        <li><%= image_tag 'trip_1.jpeg', alt: "trip1" %></li>
-        <li><%= image_tag 'trip_2.jpeg', alt: "trip2"%></li>
-        <li><%= image_tag 'trip_3.jpeg', alt: "trip3" %></li>
-        <li><%= image_tag 'trip_4.jpeg', alt: "trip4" %></li>
-        <li><%= image_tag 'trip_5.jpeg', alt: "trip5" %></li>
-        <li><%= image_tag 'trip_6.jpeg', alt: "trip6" %></li>
-        <li><%= image_tag 'trip_7.jpeg', alt: "trip7" %></li>
-        <li><%= image_tag 'trip_8.jpeg', alt: "trip8" %></li>
-          <%=link_to "#{@user.username}", user_path(@user)%> 
+
+        <li><%= image_tag 'trip_1.jpeg', alt: "trip1" %><br>
+          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+
+        <li><%= image_tag 'trip_2.jpeg', alt: "trip2"%><br>
+          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+
+        <li><%= image_tag 'trip_3.jpeg', alt: "trip3" %><br>
+          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+
+        <li><%= image_tag 'trip_4.jpeg', alt: "trip4" %><br>
+          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+
+        <li><%= image_tag 'trip_5.jpeg', alt: "trip5" %><br>
+           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%>>
+        </li>
+
+        <li><%= image_tag 'trip_6.jpeg', alt: "trip6" %><br>
+           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+        
+        <li><%= image_tag 'trip_7.jpeg', alt: "trip7" %><br>
+           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+        
+        <li><%= image_tag 'trip_8.jpeg', alt: "trip8" %><br>
+         <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+        </li>
+      
       </ul>
     </div> <!-- portfolio -->
   </div> <!-- wrapper -->
+
+  <div id="message">
+  </div>
 
   <div id="footer">
     <h5> Logged in as: 
