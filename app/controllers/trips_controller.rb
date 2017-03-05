@@ -3,21 +3,20 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
-    respond_to do |format|
-      format.html {render :index}
-      format.json { render json: @trips}
-    end
   end
 
 
   def create
-    raise "testing  the stack flow"
     @user = current_user
   end
 
 
   def show 
     @trip = Trip.find(params[:id])
+    respond_to do |format|
+      format.html {render :show}
+      format.json { render json: @trip}
+    end
   end
 end
 

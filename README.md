@@ -2,7 +2,7 @@ REQUIREMENTS
 
 Must render at least one index page (index resource - 'list of things') via jQuery and an Active Model Serialization JSON Backend. For example, in a blog domain with users and posts, you might display the index of the users posts on the users show page, fetching the posts via an AJAX GET request, with the backend rendering the posts in JSON format, and then appending the posts to the page.
 
-Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend. For example, in the blog domain, you might allow a user to sift through the posts by clicking a 'Next' button on the posts show page, with the next post being fetched and rendered via JQuery/AJAX.
+Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend. For example, in the blog domain, you might allow a user to sift through the posts by clicking a 'Next' button on the posts show page, with the next post being fetched and rendered via JQuery/AJAX.  - this is defintily happening on the trips show page
 
 The rails API must reveal at least one has-many relationship in the JSON that is then rendered to the page. For example if each of those posts has many comments, you could render those comments as well on that show page.
 
@@ -18,9 +18,13 @@ Prelim Plan -
 Create own Authentication - bcrypt gem  -- DONE
 
 Create simple validations for: 
-logged in users - DONE users can view their profile pages but not another persons profile pages  
 
-A user will look at vacation sights and book a trip
+logged in users - DONE 
+
+users can view their profile pages but not another persons profile pages  -  
+
+
+A user will look at vacation sights and book a trip - a user has many
 
 Trips will save to their profile page (think air bnb)
 

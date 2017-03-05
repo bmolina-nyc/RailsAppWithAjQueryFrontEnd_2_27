@@ -1,1 +1,24 @@
-show.html.erb
+<a href="#" class="js-next" data-id="<%=@trip.id%>">Next Trip</a>
+<h1 class="tripTitle"><%= @trip.name %></h1>
+<div class="tripImage"> <%= image_tag 'trip_1.jpeg', alt: "trip1", width: "240px", height: "160px" %> </div>
+<p class="tripBody"><%= @trip.description %></p>
+
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function() {
+    event.stopPropagation()
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/trips/" + nextId + ".json", function(data) {
+      // get post
+      var trip_data = data;
+      console.log(data)
+      $(".tripTitle").text(trip_data["name"]);
+      $(".tripBody").text(trip_data["description"]);
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", trip_data["id"]);
+    });
+  });
+});
+</script>
+ 

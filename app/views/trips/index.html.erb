@@ -16,16 +16,14 @@
       
       <ul id="portfolio">
 
-      <!-- each trip seed object -->
-      <% @trips.each do |trip| %> 
-
-        <li id='<%= trip.id%>'> 
-        <%= image_tag 'trip_1.jpeg', alt: "trip1" %>
-          <h6><%= trip.description %></h6>  
-        <%= link_to "Learn More", trip_path(:id => trip.id), :method => :get, :action => :show %>
-        </li>
-
-      <% end %>
+        <!-- each trip seed object -->
+        <% @trips.each do |trip| %> 
+          <li id='<%= trip.id%>'> 
+          <%= image_tag 'trip_1.jpeg', alt: "trip1" %>
+            <h6><%= trip.description %></h6>  
+          <%= link_to "Learn More", trip_path(trip), :method => :get, :action => :show %>
+          </li>
+        <% end %>
   
       </ul> <!-- portfolio -->
 
