@@ -13,46 +13,29 @@
   </div>
 
     <div id="wrapper">
+      
       <ul id="portfolio">
 
-        <li><%= image_tag 'trip_1.jpeg', alt: "trip1" %><br>
-          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
+      <!-- each trip seed object -->
+      <% @trips.each do |trip| %> 
+
+        <li id='<%= trip.id%>'> 
+        <%= image_tag 'trip_1.jpeg', alt: "trip1" %>
+          <h6><%= trip.description %></h6>
+          <input value="Add to Wishlist" type="button" />
         </li>
 
-        <li><%= image_tag 'trip_2.jpeg', alt: "trip2"%><br>
-          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-
-        <li><%= image_tag 'trip_3.jpeg', alt: "trip3" %><br>
-          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-
-        <li><%= image_tag 'trip_4.jpeg', alt: "trip4" %><br>
-          <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-
-        <li><%= image_tag 'trip_5.jpeg', alt: "trip5" %><br>
-           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%>>
-        </li>
-
-        <li><%= image_tag 'trip_6.jpeg', alt: "trip6" %><br>
-           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-        
-        <li><%= image_tag 'trip_7.jpeg', alt: "trip7" %><br>
-           <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-        
-        <li><%= image_tag 'trip_8.jpeg', alt: "trip8" %><br>
-         <%= button_tag(type: 'button') do content_tag(:strong, 'Add to Wishlist') end%> 
-        </li>
-      
-      </ul>
-    </div> <!-- portfolio -->
-  </div> <!-- wrapper -->
+      <% end %>
+  
+      </ul> <!-- portfolio -->
 
   <div id="message">
+
   </div>
+  
+  </div> <!-- wrapper -->
+
+
 
   <div id="footer">
     <h5> Logged in as: 

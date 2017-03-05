@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :trips
   resources :users
+
+    resources :users do
+    resources :trips
+  end
   # get 'sessions/new'
 
 
