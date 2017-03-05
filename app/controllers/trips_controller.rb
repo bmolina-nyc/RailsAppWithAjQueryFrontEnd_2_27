@@ -3,8 +3,17 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
-    render json: @trips.to_json
+    respond_to do |format|
+      format.html {render :index}
+      format.json { render json: @trips}
+    end
   end
 
 
+  def create
+    @user = current_user
+  end
+
 end
+
+

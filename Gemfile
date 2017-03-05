@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt'
+gem 'active_model_serializers'
 
 # may help with my scrolling issue
 gem 'kaminari'
