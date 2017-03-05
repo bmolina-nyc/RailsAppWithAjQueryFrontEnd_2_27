@@ -11,9 +11,14 @@ class TripsController < ApplicationController
 
 
   def create
+    raise "testing  the stack flow"
     @user = current_user
   end
 
+
+  def show 
+    @trip = Trip.find(params[:id])
+  end
 end
 
 

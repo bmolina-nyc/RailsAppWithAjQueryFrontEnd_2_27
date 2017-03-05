@@ -21,8 +21,8 @@
 
         <li id='<%= trip.id%>'> 
         <%= image_tag 'trip_1.jpeg', alt: "trip1" %>
-          <h6><%= trip.description %></h6>
-          <input value="Add to Wishlist" type="button" />
+          <h6><%= trip.description %></h6>  
+        <%= link_to "Learn More", trip_path(:id => trip.id), :method => :get, :action => :show %>
         </li>
 
       <% end %>
@@ -30,7 +30,7 @@
       </ul> <!-- portfolio -->
 
   <div id="message">
- 
+
   </div>
   
   </div> <!-- wrapper -->
