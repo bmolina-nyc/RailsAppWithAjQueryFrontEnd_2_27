@@ -24,7 +24,7 @@
 
   <%= link_to "Back to Trips", trips_path %> <a href="#" class="js-next" data-id="<%=@trip.id%>">Next Trip</a> 
   <h1 class="tripTitle"><%= @trip.name %></h1>
-  <div class="tripImage"> <%= image_tag 'trip_1.jpeg', alt: "trip1", width: "240px", height: "160px" %> </div>
+  <div class="tripImage">  <%= image_tag 'trip_1.jpeg', alt: "trip1", width: "240px", height: "160px" %> </div>
   <p class="tripBody"><%= @trip.description %></p>
 
 
@@ -63,8 +63,9 @@
         var trip_data = data;
         $(".tripTitle").text(trip_data["name"]);
         $(".tripBody").text(trip_data["description"]);
-        $('input#city').val(trip_data["name"])
-        $('#container h4').html("Get The Current Weather In " + trip_data["name"])
+        $('input#city').val(trip_data["name"]);
+        $('div.tripImage').html(`<img alt="trip1" width="240px" height="160px" src="/assets/trip_${nextId}.jpeg">`);
+        $('#container h4').html("Get The Current Weather In " + trip_data["name"]);
 
         // re-set the id to current on the link
         $(".js-next").attr("data-id", trip_data["id"]);
