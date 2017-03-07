@@ -64,6 +64,7 @@
         $(".tripTitle").text(trip_data["name"]);
         $(".tripBody").text(trip_data["description"]);
         $('input#city').val(trip_data["name"])
+        $('#container h4').html("Get The Current Weather In " + trip_data["name"])
 
         // re-set the id to current on the link
         $(".js-next").attr("data-id", trip_data["id"]);
