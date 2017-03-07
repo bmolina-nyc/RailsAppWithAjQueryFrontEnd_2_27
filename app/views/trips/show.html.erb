@@ -32,10 +32,10 @@
   <h4>Get The Current Weather in <%= @trip.name %></h4>
   <div>
     <label for="city">City</label>
-    <input label="City" id="city" type="text" value= "<%= @trip.name %>" readonly >
+    <input label="City" id="city" type="text" value= "<%= @trip.name %>"  >
     <br>
     <label for="city">Country</label>
-    <input label="Country" id="country" type="text" value= "<%= @trip.country%>" readonly>
+    <input label="Country" id="country" type="text" value= "<%= @trip.country%>" >
   </div>
 
   <button id="btnGetWeather" type="button">Get Weather Data</button>
@@ -48,37 +48,11 @@
 </div>
 
 
+   
 
 
 
-
-<script type="text/javascript">
-      $(document).ready(function (){
-        $('#btnGetWeather').click(function(){
-          // the data from the inputs
-          var requestData = $('#city').val() + ',' + $('#country').val();
-          var resultElement = $('#resultsDiv');
-
-          //the API call 
-          $.ajax({
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${requestData}&APPID=8971378f99c3f36f5f8322ef875fa787`,
-            method: 'get',
-            dataType: 'json',
-            success: function(data){
-                resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
-                  'Description: ' + data.weather[0].description);
-                  }
-                }).fail(function(error) {
-                    resultElement.html("No information Found!")
-                  });
-                });
-              });
-</script>
-
-
-
-
-<!-- rotate through the different trips -->
+<!-- rotate through the different trips and update the weather API-->
   <script type="text/javascript" charset="utf-8">
   $(function () {
     $(".js-next").on("click", function() {
@@ -87,14 +61,39 @@
       $.get("/trips/" + nextId + ".json", function(data) {
         // get post
         var trip_data = data;
-        console.log(data)
         $(".tripTitle").text(trip_data["name"]);
         $(".tripBody").text(trip_data["description"]);
+        $('input#city').val(trip_data["name"])
+
         // re-set the id to current on the link
         $(".js-next").attr("data-id", trip_data["id"]);
       });
     });
   });
+
+/* weather api call*/ 
+ $(document).ready(function (){
+    $('#btnGetWeather').click(function(){
+      // the data from the inputs
+      var requestData = $('#city').val() + ',' + $('#country').val();
+      var resultElement = $('#resultsDiv');
+
+      //the API call 
+      $.ajax({
+        url: `http://api.openweathermap.org/data/2.5/weather?q=${requestData}&APPID=8971378f99c3f36f5f8322ef875fa787`,
+        method: 'get',
+        dataType: 'json',
+        success: function(data){
+            resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
+              'Description: ' + data.weather[0].description);
+              }
+            }).fail(function(error) {
+                resultElement.html("No information Found!")
+              });
+            });
+          });
+
+
   </script>
 
 

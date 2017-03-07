@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 trips = Trip.create([ 
-{ name: 'New York', country: 'USA', description: 'Trip # 1 - Fancy Vacation # 1'},
-{ name: 'trip-2', description: 'Trip # 2 - Fancy Vacation # 2'},
-{ name: 'trip_3', description: 'Trip # 3 - Fancy Vacation # 3'},
-{ name: 'trip_4', description: 'Trip # 4 - Fancy Vacation # 4'},
-{ name: 'trip_5', description: 'Trip # 5 - Fancy Vacation # 5'},
-{ name: 'trip_6', description: 'Trip # 6 - Fancy Vacation # 6'},
-{ name: 'trip_7', description: 'Trip # 7 - Fancy Vacation # 7'},
-{ name: 'trip_8', description: 'Trip # 8 - Fancy Vacation # 8'} 
+  { name: 'New York', country: 'USA', description: 'Beautiful New York City'},
+  { name: 'Chicago', country: 'USA', description: 'Charming Chicago'},
+  { name: 'Cleveland', country: 'USA', description: 'Rust Belt Cleveland'},
+  { name: 'Detroit', country: 'USA', description: 'Motor City Detroit '},
+  { name: 'Hawaii', country: 'USA', description: 'Lovely Hawaii'},
+  { name: 'Philadelphia', country: 'USA', description: 'Tasty Philadelphia'},
+  { name: 'Los Angeles', country: 'USA', description: 'Star Studded LA'},
+  { name: 'Las Vegas', country: 'USA', description: 'Crazy Las Vegas'} 
 ])
