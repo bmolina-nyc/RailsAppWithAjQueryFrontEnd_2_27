@@ -20,7 +20,8 @@
         <% @trips.each do |trip| %> 
           <li id='<%= trip.id%>'> 
           <%= image_tag 'trip_1.jpeg', alt: "trip1" %>
-            <h6><%= trip.description %></h6>  
+            <h6 id= '<%= trip.id%>'><%= truncate(trip.description) %></h6> 
+            <button class="js-more" data-id="<%= trip.id %>">More Info</button> 
           <%= link_to "Learn More", trip_path(trip), :method => :get, :action => :show %>
           </li>
         <% end %>
@@ -34,12 +35,25 @@
   </div> <!-- wrapper -->
 
 
-
   <div id="footer">
     <h5> Logged in as: 
     <%=link_to "#{@user.username}", user_path(@user)%>  
     <%= link_to "Logout",{:controller=> "sessions", :action=> "destroy"}, :method => :destroy%></h5>
   </div> <!-- footer -->
+
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('.js-more').on("click", function(){
+     var id = $(this).data("id")
+
+     $.get("/trips/" + id + ".json", function(data) {
+      
+      // $('h6')[id - 1].html(data.description)
+      }) /* ajax request end */
+    }) /* button on click end */
+  }) /* top level function end */
+</script>
 
 </body> 
 
