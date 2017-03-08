@@ -88,7 +88,7 @@
         dataType: 'json',
         success: function(data){
             resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
-              'Description: ' + data.weather[0].description) + '<br/>' + weatherSentence(); 
+              'Description: ' + data.weather[0].description) + '<br/>' + weatherUpdate(); 
             
               }
             }).fail(function(error) {
@@ -98,9 +98,13 @@
           });
 
 
-   function weatherSentence(){
-    if (    $('#resultsDiv').html().includes("Clouds") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle") ) {
-      $("#resultsDiv").append("<br/>" + "This may work" )
+   function weatherUpdate(){
+    if (    $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("drizzle") ) {
+      $("#resultsDiv").append("<br/>" + "<strong>It's rainy today!<strong>" )
+    } else if (    $('#resultsDiv').html().includes("Clouds") || $('#resultsDiv').html().includes("clouds") || $('#resultsDiv').html().includes("cloudy") ) {
+      $('#resultsDiv').append("<br/>" + "<strong>It's cloudy today!<strong>")
+    } else if (    $('#resultsDiv').html().includes("Clear") || $('#resultsDiv').html().includes("clear") ) {
+      $('#resultsDiv').append("<br/>" + "<strong>It's crystal clear today!<strong>")
     }
   }
 
