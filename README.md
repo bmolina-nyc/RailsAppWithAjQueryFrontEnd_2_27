@@ -10,23 +10,7 @@ Must use your Rails API and a form to create a resource and render the response 
 
 Must translate the JSON responses into Javascript Model Objects. The Model Objects must have at least one method on the prototype. Formatters work really well for this.
 
-Borrowing from the previous example, instead of plainly taking the JSON response of the newly created comment and appending it to the DOM, you would create a Comment prototype object and add a function to that prototype to perhaps concatenate (format) the comments authors first and last name. You would then use the object to append the comment information to the DOM.  
-(create a function that reads the weather description and based on that, appends some type of sentence to the page
- if statement for: 
- thunderstorm, drizzle, rain, mis => its a bit rainy!
- snow => its snowing!
- clear => its clear skies today!
- clouds => its a little cloudy today!
-)
-
-$('#resultsDiv').html()   
-"Weather: Rain<br>Description: light rain"
-
-function weatherSentence(){
-  if (    $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle") ) {
-    alert("this may work")
-  }
-}
+Borrowing from the previous example, instead of plainly taking the JSON response of the newly created comment and appending it to the DOM, you would create a Comment prototype object and add a function to that prototype to perhaps concatenate (format) the comments authors first and last name. You would then use the object to append the comment information to the DOM.  (weatherUpdate function created - simple if statement to check if the json has certain keywords - if it does, we append some descriptive text to the DOM)
 
 
 
