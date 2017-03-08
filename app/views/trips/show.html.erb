@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+<%= javascript_include_tag 'trips', 'data-turbolinks-track' => true %>
+
 <style>
       #container {
         background-color: lightblue;
@@ -87,7 +88,8 @@
         dataType: 'json',
         success: function(data){
             resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
-              'Description: ' + data.weather[0].description);
+              'Description: ' + data.weather[0].description) + '<br/>' + weatherSentence(); 
+            
               }
             }).fail(function(error) {
                 resultElement.html("No information Found!")
@@ -96,11 +98,13 @@
           });
 
 
+   function weatherSentence(){
+    if (    $('#resultsDiv').html().includes("Clouds") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle") ) {
+      $("#resultsDiv").append("<br/>" + "This may work" )
+    }
+  }
+
   </script>
-
-
-
-
 
 
 </body>

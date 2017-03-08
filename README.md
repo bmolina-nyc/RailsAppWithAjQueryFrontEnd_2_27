@@ -23,7 +23,7 @@ $('#resultsDiv').html()
 "Weather: Rain<br>Description: light rain"
 
 function weatherSentence(){
-  if ( $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle) ) {
+  if (    $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle") ) {
     alert("this may work")
   }
 }
