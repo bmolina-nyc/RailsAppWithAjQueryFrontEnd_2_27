@@ -40,6 +40,9 @@ h5 a {
   color: white;
 }
 
+h6 {
+  color: red;
+}
 
 #wrapper{
   width: 1024px;
@@ -55,7 +58,9 @@ h5 a {
 
 #portfolio li{
  display: inline-block;
+ float: left;
  margin: 0px 5px 10px 0px;
+ overflow: hidden;
 }
 
 #portfolio li img{
@@ -64,4 +69,7 @@ h5 a {
  width: 240px;
  height: 160px;
 }
+
+
+
 

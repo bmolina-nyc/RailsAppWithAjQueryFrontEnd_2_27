@@ -21,19 +21,15 @@
         <% @trips.each do |trip| %> 
           <li id='<%= trip.id%>'> 
           <%= image_tag "trip_#{trip_id}.jpeg", alt: "trip#{trip_id}" %>
-            <h6><%= truncate(trip.description) %></h6> 
+            <h6><%= truncate(trip.description) %></h6>
             <button class="js-more" data-id="<%= trip.id %>">More Info</button> 
-          <%= link_to "Learn More", trip_path(trip), :method => :get, :action => :show %>
+              <%= button_to "View Trip", trip_path(trip), :method => :get, :action => :show %>
             <% trip_id += 1 %>
           </li>
 
         <% end %>
   
       </ul> <!-- portfolio -->
-
-  <div id="message">
-
-  </div>
   
   </div> <!-- wrapper -->
 
