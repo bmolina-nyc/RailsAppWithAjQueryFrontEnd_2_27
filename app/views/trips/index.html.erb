@@ -49,9 +49,16 @@
 
      $.get("/trips/" + id + ".json", function(data) {
       $(`li#${id} h6`).html(data.description)
-      }) /* ajax request end */
+      })/* ajax request end */
     }) /* button on click end */
   }) /* top level function end */
+
+  function weatherSentence(){
+    if (    $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle") ) {
+      alert("this may work")
+    }
+  }
+
 </script>
 
 </body> 

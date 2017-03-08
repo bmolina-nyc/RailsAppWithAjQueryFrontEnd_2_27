@@ -19,6 +19,19 @@ Borrowing from the previous example, instead of plainly taking the JSON response
  clouds => its a little cloudy today!
 )
 
+$('#resultsDiv').html()   
+"Weather: Rain<br>Description: light rain"
+
+function weatherSentence(){
+  if ( $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("drizzle) ) {
+    alert("this may work")
+  }
+}
+
+
+
+
+
 
 Prelim Plan - 
 
