@@ -42,6 +42,7 @@ h5 a {
 
 h6 {
   color: red;
+  text-align: center;
 }
 
 #wrapper{
@@ -59,7 +60,7 @@ h6 {
 #portfolio li{
  display: inline-block;
  float: left;
- margin: 0px 5px 10px 0px;
+ margin: 0px 5px 5px 0px;
  overflow: hidden;
 }
 
@@ -68,6 +69,10 @@ h6 {
  display: inline-block;
  width: 240px;
  height: 160px;
+}
+
+#cash {
+  color: green;
 }
 
 

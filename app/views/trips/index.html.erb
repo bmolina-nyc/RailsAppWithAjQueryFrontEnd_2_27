@@ -8,7 +8,7 @@
 
   <div id ="header">
     <div id="menu">
-      <h2> Trip Planner </h2>
+      <h2> Cool Vacations</h2>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
           <li id='<%= trip.id%>'> 
           <%= image_tag "trip_#{trip_id}.jpeg", alt: "trip#{trip_id}" %>
             <h6><%= trip.description%></h6>
-            <button class="js-more" data-id="<%= trip.id %>">More Info</button> 
+            <button class="js-more" data-id="<%= trip.id %>">Get Our Price</button> 
               <%= button_to "View Trip", trip_path(trip), :method => :get, :action => :show %>
             <% trip_id += 1 %>
           </li>
