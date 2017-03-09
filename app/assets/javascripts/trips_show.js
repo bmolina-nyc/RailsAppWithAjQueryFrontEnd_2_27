@@ -36,7 +36,7 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data){
             resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
-              'Description: ' + data.weather[0].description + '<br/>' + 'Temp: ' + kelvinFarenheit(data.main.temp) + " Degrees" ) + '<br/>' + weatherUpdate(); 
+              'Description: ' + data.weather[0].description + '<br/>' + `<div id="temperature">Temp: ${kelvinFarenheit(data.main.temp)} Degrees </div>` ) + '<br/>' + weatherUpdate(); 
               }
             }).fail(function(error) {
                 resultElement.html("No information Found!")
@@ -46,13 +46,18 @@ $(document).ready(function() {
 
 /* SHOW PAGE depending on weather, we append a descriptive sentence to the DOM*/ 
       function weatherUpdate(){
-    if (    $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("drizzle") ) {
-      $("#resultsDiv").append("<br/>" + "<strong>It's rainy today!<strong>" )
-    } else if (    $('#resultsDiv').html().includes("Clouds") || $('#resultsDiv').html().includes("clouds") || $('#resultsDiv').html().includes("cloudy") ) {
-      $('#resultsDiv').append("<br/>" + "<strong>It's cloudy today!<strong>")
-    } else if (    $('#resultsDiv').html().includes("Clear") || $('#resultsDiv').html().includes("clear") ) {
-      $('#resultsDiv').append("<br/>" + "<strong>It's crystal clear today!<strong>")
-    }
+        var tempStr = $('#resultsDiv div#temperature').html()
+        var tempInt = parseInt(tempStr.match(/\d+/)[0])  /* takes the api value of temperature and makes an integer*/
+
+        if (tempInt < 30){
+          $("#resultsDiv").append("<br/>" + "<strong>It's Freezing today!<strong>" )
+        } else if (tempInt > 30 && tempInt <= 60) {
+          $("#resultsDiv").append("<br/>" + "<strong>It's a bit cool out today!<strong>" )
+        } else if (tempInt > 60 && tempInt <= 80 ) {
+          $("#resultsDiv").append("<br/>" + "<strong>It's pretty warm out!<strong>" )
+        } else if ( tempInt < 81 ) {
+          $("#resultsDiv").append("<br/>" + "<strong>It's really hot out!<strong>" )
+        }
   }  
 
     function kelvinFarenheit(data){
