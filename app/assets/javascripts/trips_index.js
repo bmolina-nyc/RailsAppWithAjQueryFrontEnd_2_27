@@ -1,6 +1,6 @@
 /* INDEX PAGE append random price to the screen - Index Page  */
   $(function() {
-    $('.js-more').on("click", function(){
+    $('.js-more').one("click", function(){
      var id = $(this).data("id")
 
      $.get("/trips/" + id + ".json", function(data) {

@@ -11,6 +11,7 @@ class TripsController < ApplicationController
 
 
   def create
+    raise "testing a route"
     @user = current_user
   end
 

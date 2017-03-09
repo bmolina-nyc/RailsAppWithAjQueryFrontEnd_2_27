@@ -22,8 +22,10 @@
           <li id='<%= trip.id%>'> 
           <%= image_tag "trip_#{trip_id}.jpeg", alt: "trip#{trip_id}" %>
             <h6><%= trip.description%></h6>
-            <button class="js-more" data-id="<%= trip.id %>">Get Our Price</button> 
-              <%= button_to "View Trip", trip_path(trip), :method => :get, :action => :show %>
+              <button class="js-more" data-id="<%= trip.id %>">Get Our Price</button> 
+              <button>
+              <%= link_to "View Trip", trip_path(trip), {:method => :get, :action => :show} %>
+              </button>
             <% trip_id += 1 %>
           </li>
 
