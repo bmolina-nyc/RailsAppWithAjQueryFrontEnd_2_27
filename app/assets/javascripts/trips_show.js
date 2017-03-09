@@ -15,7 +15,7 @@ $(document).ready(function() {
         $('input#city').val(trip_data["name"]);
         $('div.tripImage').html(`<img alt="trip${nextId}" width="240px" height="160px" src="/assets/trip_${nextId}.jpeg">`);
         $('#container h4').html("Get The Current Weather In " + trip_data["name"]);
-
+        $("#resultsDiv").empty();
         // re-set the id to current on the link
         $(".js-next").attr("data-id", trip_data["id"]);
       });
@@ -30,14 +30,13 @@ $(document).ready(function() {
       var resultElement = $('#resultsDiv');
 
       //the API call 
-      $.ajax({
+          $.ajax({
         url: `http://api.openweathermap.org/data/2.5/weather?q=${requestData}&APPID=8971378f99c3f36f5f8322ef875fa787`,
         method: 'get',
         dataType: 'json',
         success: function(data){
             resultElement.html('Weather: ' + data.weather[0].main + '<br/>' + 
-              'Description: ' + data.weather[0].description) + '<br/>' + weatherUpdate(); 
-            
+              'Description: ' + data.weather[0].description + '<br/>' + 'Temp: ' + kelvinFarenheit(data.main.temp) + " Degrees" ) + '<br/>' + weatherUpdate(); 
               }
             }).fail(function(error) {
                 resultElement.html("No information Found!")
@@ -55,5 +54,9 @@ $(document).ready(function() {
       $('#resultsDiv').append("<br/>" + "<strong>It's crystal clear today!<strong>")
     }
   }  
+
+    function kelvinFarenheit(data){
+      return Math.round(data * 1.8 - 459.67)
+    }
 
 
