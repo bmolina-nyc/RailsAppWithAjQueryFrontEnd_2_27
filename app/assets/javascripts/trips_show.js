@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 });
 
-
+/* SHOW PAGE click the next - append new data to the page without a refresh*/
  $(function () {
     $(".js-next").on("click", function() {
       event.stopPropagation()
@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
   });
 
-/* weather api call*/ 
+/* SHOW PAGE weather api call*/ 
  $(document).ready(function (){
     $('#btnGetWeather').click(function(){
       // the data from the inputs
@@ -45,7 +45,7 @@ $(document).ready(function() {
             });
           });
 
-
+/* SHOW PAGE depending on weather, we append a descriptive sentence to the DOM*/ 
       function weatherUpdate(){
     if (    $('#resultsDiv').html().includes("Rain") || $('#resultsDiv').html().includes("rain") || $('#resultsDiv').html().includes("drizzle") ) {
       $("#resultsDiv").append("<br/>" + "<strong>It's rainy today!<strong>" )
@@ -54,4 +54,6 @@ $(document).ready(function() {
     } else if (    $('#resultsDiv').html().includes("Clear") || $('#resultsDiv').html().includes("clear") ) {
       $('#resultsDiv').append("<br/>" + "<strong>It's crystal clear today!<strong>")
     }
-  }
+  }  
+
+

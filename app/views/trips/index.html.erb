@@ -2,7 +2,7 @@
 <html>
 <head>
 <%= stylesheet_link_tag "trips" %>
-<%= javascript_include_tag 'trips', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'trips_index', 'data-turbolinks-track' => true %>
 </head>
 <body >
 
@@ -21,7 +21,7 @@
         <% @trips.each do |trip| %> 
           <li id='<%= trip.id%>'> 
           <%= image_tag "trip_#{trip_id}.jpeg", alt: "trip#{trip_id}" %>
-            <h6><%= truncate(trip.description) %></h6>
+            <h6><%= trip.description%></h6>
             <button class="js-more" data-id="<%= trip.id %>">More Info</button> 
               <%= button_to "View Trip", trip_path(trip), :method => :get, :action => :show %>
             <% trip_id += 1 %>
@@ -41,19 +41,6 @@
   </div> <!-- footer -->
 
 
-<!-- append full description to the screen -->
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-    $('.js-more').on("click", function(){
-     var id = $(this).data("id")
-
-     $.get("/trips/" + id + ".json", function(data) {
-      $(`li#${id} h6`).html(data.description)
-      })/* ajax request end */
-    }) /* button on click end */
-  }) /* top level function end */
-
-</script>
 
 </body> 
 

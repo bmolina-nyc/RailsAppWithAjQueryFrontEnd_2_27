@@ -10,6 +10,7 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( trips.css )
-Rails.application.config.assets.precompile += %w( trips.js )
 Rails.application.config.assets.precompile += %w( welcome.js ) 
 Rails.application.config.assets.precompile += %w( weatherbox.css )
+Rails.application.config.assets.precompile += %w( trips_index.js )
+Rails.application.config.assets.precompile += %w( trips_show.js )
