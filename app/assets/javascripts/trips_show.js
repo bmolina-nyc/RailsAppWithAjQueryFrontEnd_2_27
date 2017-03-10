@@ -44,14 +44,14 @@ $(document).ready(function() {
             });
           });
 
-/* SHOW PAGE depending on weather, we append a descriptive sentence to the DOM*/ 
+/* SHOW PAGE depending on weather, we append a descriptive sentence to the DOM */ 
       function weatherUpdate(){
         var tempStr = $('#resultsDiv div#temperature').html()
         var tempInt = parseInt(tempStr.match(/\d+/)[0])  /* takes the api value of temperature and makes an integer*/
 
-        if (tempInt < 30){
-          $("#resultsDiv").append("<br/>" + "<strong>It's Freezing today!<strong>" )
-        } else if (tempInt > 30 && tempInt <= 60) {
+        if (tempInt < 40){
+          $("#resultsDiv").append("<br/>" + "<strong>It's pretty cold today!<strong>" )
+        } else if (tempInt > 40 && tempInt <= 60) {
           $("#resultsDiv").append("<br/>" + "<strong>It's a bit cool out today!<strong>" )
         } else if (tempInt > 60 && tempInt <= 80 ) {
           $("#resultsDiv").append("<br/>" + "<strong>It's pretty warm out!<strong>" )
@@ -60,8 +60,9 @@ $(document).ready(function() {
         }
   }  
 
-    function kelvinFarenheit(data){
-      return Math.round(data * 1.8 - 459.67)
+/* SHOW PAGE - convert API Kelvin reading to farenheit */
+    function kelvinFarenheit(temp){
+      return Math.round(temp * 1.8 - 459.67)
     }
 
 
