@@ -18,17 +18,6 @@ class TripsController < ApplicationController
     end
   end
 
-  def new 
-    raise params.inspect
-  end
-
-
-
-  private 
-
-  def trip_params
-    params.require(:trip).permit(:test,)
-  end
 end
 
 

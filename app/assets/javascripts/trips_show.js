@@ -1,13 +1,7 @@
 $(document).ready(function() {
-  listeners();
+
 });
 
-
-function listeners(){
-   $('#getTrip').on("click", function(){
- 
-  })
-}
 
 /* SHOW PAGE click the next - append new data to the page without a refresh*/
  $(function () {
@@ -74,27 +68,6 @@ function listeners(){
 
 
 
-
-  //   var url = `/users/${current_user.id}/trips`
-  //   method = "POST"
-  // }
-
-  // $.ajax({
-  //   url: url,
-  //   method: method,
-  //   dataType: "json",
-  //   data: {
-  //     game: {
-  //       state: getMarks()
-  //     }
-  //   },
-  //   success: function(data) {
-  //     if(resetCurrentGame) {
-  //       currentGame = undefined;
-  //     } else {
-  //       currentGame = data.game.id;
-  //     }
-  //   }
 
 
 

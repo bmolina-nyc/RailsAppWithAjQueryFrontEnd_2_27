@@ -11,11 +11,10 @@
 
 
   <h1 class="tripTitle"><%= @trip.name %></h1>
+
   <div class="tripImage">  <%= image_tag 'trip_1.jpeg', alt: "trip1", width: "240px", height: "160px" %> </div>
   <p class="tripBody"><%= @trip.description %></p>
   
-  <button id="getTrip">Get this Trip!</button>
-
   <!-- weather data -->
   <div id="container">
     <h4>Get The Current Weather in <%= @trip.name %></h4>
