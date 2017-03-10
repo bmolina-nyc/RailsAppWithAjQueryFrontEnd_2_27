@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
 
     resources :users do
-    resources :trips
+      resources :trips, only: [:new]
   end
   # get 'sessions/new'
 

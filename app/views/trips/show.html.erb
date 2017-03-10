@@ -7,37 +7,37 @@
 <body>
 
   <%= link_to "Back to Trips", trips_path %> <a href="#" class="js-next" data-id="<%=@trip.id%>">Next Trip</a> 
+
+
+
   <h1 class="tripTitle"><%= @trip.name %></h1>
   <div class="tripImage">  <%= image_tag 'trip_1.jpeg', alt: "trip1", width: "240px", height: "160px" %> </div>
   <p class="tripBody"><%= @trip.description %></p>
+  
+  <button id="getTrip">Get this Trip!</button>
 
   <!-- weather data -->
   <div id="container">
-  <h4>Get The Current Weather in <%= @trip.name %></h4>
-  <div>
-    <label for="city">City</label>
-    <input label="City" id="city" type="text" value= "<%= @trip.name %>"  >
-    <br>
-    <label for="city">Country</label>
-    <input label="Country" id="country" type="text" value= "<%= @trip.country%>" >
+    <h4>Get The Current Weather in <%= @trip.name %></h4>
+    <div>
+      <label for="city">City</label>
+      <input label="City" id="city" type="text" value= "<%= @trip.name %>"  >
+      <br>
+      <label for="city">Country</label>
+      <input label="Country" id="country" type="text" value= "<%= @trip.country%>" >
+    </div>
+
+    <button id="btnGetWeather" type="button">Get Weather Data</button>
+    
+    <br><br>
+
+    <div id = "resultsDiv">
+    </div>
+
   </div>
 
-  <button id="btnGetWeather" type="button">Get Weather Data</button>
+
   
-  <br><br>
-
-  <div id = "resultsDiv">
-  </div>
-
-</div>
-
-
-   
-
-
-
-
-
 </body>
 </html>
  

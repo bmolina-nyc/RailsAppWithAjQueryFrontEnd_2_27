@@ -9,19 +9,25 @@ class TripsController < ApplicationController
     end
   end
 
-
-  def create
-    raise "testing a route"
-    @user = current_user
-  end
-
-
   def show 
+    @user = current_user
     @trip = Trip.find(params[:id])
     respond_to do |format|
       format.html {render :show}
       format.json { render json: @trip}
     end
+  end
+
+  def new 
+    raise params.inspect
+  end
+
+
+
+  private 
+
+  def trip_params
+    params.require(:trip).permit(:test,)
   end
 end
 
