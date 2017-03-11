@@ -18,6 +18,7 @@
   <!-- weather data -->
   <div id="container">
     <h4>Get The Current Weather in <%= @trip.name %></h4>
+    
     <div>
       <label for="city">City</label>
       <input label="City" id="city" type="text" value= "<%= @trip.name %>"  >
@@ -33,9 +34,28 @@
     <div id = "resultsDiv">
     </div>
 
+
+  </div> <!-- container -->
+
+    <div id ="posts">
+    <h5> Write a post about this trip </h5>
+     <%= form_for(@post) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
 
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+    </div>
   
 </body>
 </html>

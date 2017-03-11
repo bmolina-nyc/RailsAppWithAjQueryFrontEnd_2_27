@@ -10,6 +10,7 @@ class TripsController < ApplicationController
   end
 
   def show 
+    @post = Post.new
     @user = current_user
     @trip = Trip.find(params[:id])
     respond_to do |format|
