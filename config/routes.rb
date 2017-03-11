@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :trips
   resources :users
 
+  resources :users do
+    resources :posts
+  end
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   
