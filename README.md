@@ -5,7 +5,7 @@ Must render at least one index page (index resource - 'list of things') via jQue
 Must render at least one show page (show resource - 'one specific thing') via jQuery and an Active Model Serialization JSON Backend. For example, in the blog domain, you might allow a user to sift through the posts by clicking a 'Next' button on the posts show page, with the next post being fetched and rendered via JQuery/AJAX.  (I can scroll through the trips via a next link - all the trip information and weather API info gets updated) 
 
 The rails API must reveal at least one has-many relationship in the JSON that is then rendered to the page. For example if each of those posts has many comments, you could render those comments as well on that show page. 
-(im starting from scratch - gonna try to mirror the user has many comments setup , borrowing from the previous lessons)
+(on a users show page - i am rendering comments they create - we can scroll through each one at a time).
 
 Must use your Rails API and a form to create a resource and render the response without a page refresh. For example, a user might be able to add a comment to a post, and the comment would be serialized, and submitted via an AJAX POST request, with the response being the new object in JSON and then appending that new comment to the DOM using JavaScript (ES6 Template Literals, can help out a lot with this).  (Added a weather app that makes a GET request to openweathermap.org's API, the successful response provides me with data that I am appending to the page)
 

@@ -1,1 +1,25 @@
 <%= @user.username %>
+
+<!-- scroll through the users posts -->
+<h2> All your posts </h2>
+<a href="#" class="js-next" data-id="<%=@post.id%>">Next Post</a> 
+<h3 class ="postName"><%= @post.title %> </h3>
+<div id="body"><%= @post.description %></div>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on('click', function() {
+    event.stopPropagation()
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+
+    $.get("/users/<%=@user.id%>/posts/" + nextId + ".json", function(data) {
+      var post_data = data
+
+      $('.postName').text(post_data['title']);
+      $('#body').text(post_data['description'])
+      $(".js-next").attr("data-id", post_data["id"]);
+    });
+  });
+});
+</script>
+

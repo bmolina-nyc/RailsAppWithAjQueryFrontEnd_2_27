@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @posts.to_json(only)}
+      format.json { render json: @posts}
     end
   end
 

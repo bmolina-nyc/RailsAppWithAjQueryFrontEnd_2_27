@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   end
 
   def show 
-    @user = current_user
+    @post = @user.posts.first
     respond_to do |f|
       f.html { render :show }
-      f.json { render json: @user }
+      f.json { render json: @user.posts }
     end
   end
 
