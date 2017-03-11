@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <%= javascript_include_tag 'users_show', 'data-turbolinks-track' => true %>
-</head>
-  <body>
-    <!-- scroll through the users posts -->
-    <h2> All your posts </h2>
-    <a href="#" class="js-next" data-id="<%=@post.id%>">Next Post</a> 
-    <h3 class ="postName"><%= @post.title %> </h3>
-    <div id="body"><%= @post.description %></div>
 
-<script>
     $(function () {
   $(".js-next").on('click', function() {
     event.stopPropagation()
@@ -25,9 +13,3 @@
     });
   });
 });
-</script>
-
-
-  </body>
-</html>
-
